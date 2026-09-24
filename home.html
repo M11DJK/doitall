@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DoItAll | tools and games</title>
+  <script>
+    const pageTitles = [
+      "DoItAll | tools and games",
+      "DoItAll | bored again?",
+      "DoItAll | random stuff",
+      "DoItAll | Y r u here???"
+    ];
+    document.title = pageTitles[Math.floor(Math.random() * pageTitles.length)];
+  </script>
+  <link rel="icon" href="dia.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <main class="page">
+    <section class="hero"><div class="icon">11</div>
+      <h1 class="logo">DoItAll!</h1>
+      <p class="tagline">Welcome to DoItAll!</p>
+            <p class="tagline">Your browser toolkit for everyday digital work.</p>
+    </section>
+
+    <section class="tools" aria-label="Tools"><!-- tools start -->
+      <article class="tool-card password-tool">
+        <div class="tool-heading">
+          <span class="tool-number">01</span>
+          <div>
+            <p class="tool-kicker">Passwords</p>
+            <h2>Make a password</h2>
+          </div>
+        </div>
+        <p class="tool-description">Make a strong password. It stays on this page.</p>
+
+        <div class="password-output-row"><!-- password stuff -->
+          <output id="password-output" class="password-output" aria-live="polite">Click generate</output>
+          <button id="copy-password" class="icon-button" type="button" title="Copy password" aria-label="Copy password">Copy it</button>
+        </div>
+        <div class="range-row">
+          <label for="password-length">How long <output id="password-length-value">20</output></label>
+          <input id="password-length" type="range" min="8" max="64" value="20" />
+        </div>
+        <div class="check-grid">
+          <label><input id="include-uppercase" type="checkbox" checked /> Big letters</label>
+          <label><input id="include-lowercase" type="checkbox" checked /> Small letters</label>
+          <label><input id="include-numbers" type="checkbox" checked /> Numbers</label>
+          <label><input id="include-symbols" type="checkbox" checked /> Weird signs</label>
+        </div>
+        <button id="generate-password" class="primary-button" type="button">Make password</button>
+        <p id="password-status" class="tool-status" role="status"></p>
+      </article>
+
+        <article class="tool-card transform-tool">
+        <div class="tool-heading">
+          <span class="tool-number">02</span>
+          <div>
+            <p class="tool-kicker">Text stuff</p>
+            <h2>Change your text</h2>
+          </div>
+        </div>
+        <p class="tool-description">Change text into different formats. You can also make a hash.</p>
+
+        <div class="transform-controls">
+          <label for="transform-format">What do you want?</label>
+          <select id="transform-format">
+            <option value="base64">Base64</option>
+            <option value="url">URL component</option>
+            <option value="html">HTML entities</option>
+            <option value="hex">Hexadecimal</option>
+            <option value="binary">Binary</option>
+            <option value="morse">Morse code</option>
+            <option value="sha256">SHA-256 hash</option>
+          </select>
+          <div class="mode-switch" role="group" aria-label="Transform direction">
+            <button class="mode-button active" type="button" data-mode="encode">Encode</button>
+            <button class="mode-button" type="button" data-mode="decode">Decode</button>
+          </div>
+        </div>
+        <label class="field-label" for="transform-input">Your text</label>
+        <textarea id="transform-input" rows="6" placeholder="Type or paste something here..."></textarea>
+        <div class="transform-actions"> 
+          <button id="run-transform" class="primary-button" type="button">Do it</button>
+          <button id="copy-result" class="secondary-button" type="button">Copy answer</button>
+        </div>
+        <label class="field-label" for="transform-output">Answer</label>
+        <textarea id="transform-output" rows="6" readonly placeholder="The answer shows up here..."></textarea>
+        <p id="transform-status" class="tool-status" role="status"></p>
+      </article>
+    </section>
+
+  <section class="media-tools" aria-label="Music tools">
+      <article class="tool-card media-card">
+        <div class="tool-heading">
+          <span class="tool-number">03</span>
+          <div>
+            <p class="tool-kicker">Music</p>
+            <h2>YouTube to MP3</h2>
+          </div>
+        </div>
+        <p class="tool-description">Put a YouTube video link here to get an MP3.</p>
+        <iframe src="https://api.ytmp3.biz/form" width="560" height="112" title="YouTube to MP3" style="border:none;max-width:100%;"></iframe>
+      </article>
+    </section>
+
+    <section class="game-tools" aria-label="Games">
+      <div class="games-heading">
+        <p class="tool-kicker">Take five</p>
+        <h2>Games</h2>
+        <p>Play something when you are bored.</p>
+        <p>(not our games, just ones we found fun!)</p>
+      </div>
+
+      <div class="madkidgames-embed" data-game="Subway Surfers" style="max-width:960px;margin:0 auto;">
+        <a class="game-link" href="https://www.madkidgames.com/game/subway-surfers" target="_blank" rel="noopener noreferrer">Play Subway Surfers</a>
+        <noscript><p style="text-align:center;font-size:13px;"><a href="https://www.madkidgames.com/game/subway-surfers">Play Subway Surfers</a></p></noscript>
+      </div>
+
+      <div class="madkidgames-embed" data-game="Angry Birds 2" style="max-width:960px;margin:0 auto;">
+        <a class="game-link" href="https://www.madkidgames.com/game/angry-birds-2" target="_blank" rel="noopener noreferrer">Play Angry Birds 2</a>
+        <noscript><p style="text-align:center;font-size:13px;"><a href="https://www.madkidgames.com/game/angry-birds-2">Play Angry Birds 2</a></p></noscript>
+      </div>
+
+      <div class="madkidgames-embed" data-game="Bad Piggies" style="max-width:960px;margin:0 auto;">
+        <a class="game-link" href="https://www.madkidgames.com/game/bad-piggies" target="_blank" rel="noopener noreferrer">Play Bad Piggies</a>
+        <noscript><p style="text-align:center;font-size:13px;"><a href="https://www.madkidgames.com/game/bad-piggies">Play Bad Piggies</a></p></noscript>
+      </div>
+
+      <div class="madkidgames-embed" data-game="Bus Simulator Ultimate" style="max-width:960px;margin:0 auto;">
+        <a class="game-link" href="https://www.madkidgames.com/game/bus-simulator-ultimate" target="_blank" rel="noopener noreferrer">Play Bus Simulator Ultimate</a>
+        <noscript><p style="text-align:center;font-size:13px;"><a href="https://www.madkidgames.com/game/bus-simulator-ultimate">Play Bus Simulator Ultimate</a></p></noscript>
+      </div>
+    </section>
+
+    <a class="back-link" href="index.html">Go back</a>
+  </main>
+  <script>
+    const passwordOutput=document.querySelector("#password-output"),passwordLength=document.querySelector("#password-length");
+    const passwordLengthValue = document.querySelector("#password-length-value"); const passwordStatus=document.querySelector("#password-status");
+    const characterSets = {
+      uppercase: "ABCDEFGHJKLMNPQRSTUVWXYZ",
+      lowercase: "abcdefghijkmnopqrstuvwxyz",
+      numbers: "23456789",
+      symbols: "!#$%&()*+,-.:;<=>?@[]^_{|}~"
+    };
+
+    function secureRandomIndex(maximum){
+      const randomValues = new Uint32Array(1);
+      const limit = Math.floor(0x100000000 / maximum) * maximum;
+      do {
+        crypto.getRandomValues(randomValues);
+      } while (randomValues[0] >= limit);
+      return randomValues[0] % maximum;
+    }
+
+    function generatePassword() {
+      const selectedSets = [
+        document.querySelector("#include-uppercase").checked ? characterSets.uppercase : "",
+        document.querySelector("#include-lowercase").checked ? characterSets.lowercase : "",
+        document.querySelector("#include-numbers").checked ? characterSets.numbers : "",
+        document.querySelector("#include-symbols").checked ? characterSets.symbols : ""
+      ].filter(Boolean);
+
+      if (!selectedSets.length) {
+        passwordStatus.textContent = "Pick at least one box.";
+        return;
+      }
+
+      const allCharacters = selectedSets.join("");
+      const passwordCharacters = selectedSets.map((set) => set[secureRandomIndex(set.length)]);
+      while (passwordCharacters.length < Number(passwordLength.value)) {
+        passwordCharacters.push(allCharacters[secureRandomIndex(allCharacters.length)]);
+      }
+
+      for (let index = passwordCharacters.length - 1; index > 0; index -= 1) {
+        const swapIndex = secureRandomIndex(index + 1);
+        [passwordCharacters[index], passwordCharacters[swapIndex]] = [passwordCharacters[swapIndex], passwordCharacters[index]];
+      }
+
+      passwordOutput.value = passwordCharacters.join("");
+      passwordStatus.textContent = "Made here in your browser.";
+    }
+
+    passwordLength.addEventListener("input",()=>{passwordLengthValue.textContent=passwordLength.value});
+    document.querySelector("#generate-password").addEventListener("click", generatePassword);
+    document.querySelector("#copy-password").addEventListener("click", async () => {
+      if (!passwordOutput.value || passwordOutput.value === "Click generate") return;
+      await navigator.clipboard.writeText(passwordOutput.value);
+      passwordStatus.textContent = "Copied. Nice.";
+    });
+
+    const formatSelect=document.querySelector("#transform-format"),inputField=document.querySelector("#transform-input");
+    const outputField=document.querySelector("#transform-output"); const transformStatus=document.querySelector("#transform-status");
+    let transformMode = "encode";
+
+    function encodeHtml(value) {
+      return value.replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
+    }
+
+    function decodeHtml(value) {
+      const parser = new DOMParser().parseFromString(value, "text/html");
+      return parser.documentElement.textContent;
+    }
+
+    function encodeHex(value) {
+      return Array.from(new TextEncoder().encode(value), (byte) => byte.toString(16).padStart(2, "0")).join(" ");
+    }
+
+    function decodeHex(value) {
+      const cleanValue = value.replace(/0x/gi, "").replace(/[^0-9a-f]/gi, "");
+      if (!cleanValue || cleanValue.length % 2) throw new Error("Hex input must contain complete byte pairs.");
+      return new TextDecoder().decode(Uint8Array.from(cleanValue.match(/.{2}/g), (byte) => parseInt(byte, 16)));
+    }
+
+    function encodeBinary(value) {
+      return Array.from(new TextEncoder().encode(value), (byte) => byte.toString(2).padStart(8, "0")).join(" ");
+    }
+
+    function decodeBinary(value) {
+      const groups = value.trim().split(/\s+/).filter(Boolean);
+      if (!groups.length || groups.some((group) => !/^[01]{8}$/.test(group))) {
+        throw new Error("Binary input must contain 8-bit groups separated by spaces.");
+      }
+      return new TextDecoder().decode(Uint8Array.from(groups, (group) => parseInt(group, 2)));
+    }
+
+    const morseMap = {
+      A: ".-", B: "-...", C: "-.-.", D: "-..", E: ".", F: "..-.", G: "--.", H: "....", I: "..", J: ".---", K: "-.-", L: ".-..", M: "--", N: "-.", O: "---", P: ".--.", Q: "--.-", R: ".-.", S: "...", T: "-", U: "..-", V: "...-", W: ".--", X: "-..-", Y: "-.--", Z: "--..",
+      0: "-----", 1: ".----", 2: "..---", 3: "...--", 4: "....-", 5: ".....", 6: "-....", 7: "--...", 8: "---..", 9: "----."
+    };
+    const reverseMorseMap = Object.fromEntries(Object.entries(morseMap).map(([character, code]) => [code, character]));
+
+    function encodeMorse(value) {
+      return value.toUpperCase().split(/\s+/).map((word) => word.split("").map((character) => morseMap[character] || character).join(" ")).join(" / ");
+    }
+
+    function decodeMorse(value) {
+      return value.split("/").map((word) => word.trim().split(/\s+/).filter(Boolean).map((code) => {
+        if (!reverseMorseMap[code]) throw new Error(`Unknown Morse code: ${code}`);
+        return reverseMorseMap[code];
+      }).join("")).join(" ");
+    }
+
+    async function sha256(value) {
+      const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+      return Array.from(new Uint8Array(bytes), (byte) => byte.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function runTransform() {
+      const value = inputField.value;
+      const format = formatSelect.value;
+      try {
+        if (format === "sha256") {
+          outputField.value = await sha256(value);
+        } else if (format === "base64") {
+          outputField.value = transformMode === "encode" ? btoa(unescape(encodeURIComponent(value))) : decodeURIComponent(escape(atob(value)));
+        } else if (format === "url") {
+          outputField.value = transformMode === "encode" ? encodeURIComponent(value) : decodeURIComponent(value);
+        } else if (format === "html") {
+          outputField.value = transformMode === "encode" ? encodeHtml(value) : decodeHtml(value);
+        } else if (format === "binary") {
+          outputField.value = transformMode === "encode" ? encodeBinary(value) : decodeBinary(value);
+        } else if (format === "morse") {
+          outputField.value = transformMode === "encode" ? encodeMorse(value) : decodeMorse(value);
+        } else {
+          outputField.value = transformMode === "encode" ? encodeHex(value) : decodeHex(value);
+        }
+        transformStatus.textContent = "Done, easy.";
+      } catch (error) {
+        outputField.value = "";
+        transformStatus.textContent = error.message || "That did not work.";
+      }
+    }
+
+    document.querySelectorAll(".mode-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        transformMode = button.dataset.mode;
+        document.querySelectorAll(".mode-button").forEach((item) => item.classList.toggle("active", item === button));
+        formatSelect.dispatchEvent(new Event("change"));
+      });
+    });
+    formatSelect.addEventListener("change", () => {
+      const isHash = formatSelect.value === "sha256";
+      document.querySelectorAll(".mode-button").forEach((button) => {
+        button.disabled = isHash;
+        button.classList.toggle("active", button.dataset.mode === "encode" && isHash || button.dataset.mode === transformMode && !isHash);
+      });
+      transformStatus.textContent = isHash ? "You cannot decode a hash. It only goes one way." : "";
+    });
+    document.querySelector("#run-transform").addEventListener("click", runTransform);
+    document.querySelector("#copy-result").addEventListener("click", async () => {
+      if (!outputField.value) return;
+      await navigator.clipboard.writeText(outputField.value);
+      transformStatus.textContent = "Answer copied.";
+    });
+
+    generatePassword();
+  </script>
+</body>
+</html>
+
